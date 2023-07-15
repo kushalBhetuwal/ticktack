@@ -1,0 +1,138 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue",Helvetica,Arial;
+}
+
+body{
+    height:100vh;
+    background: linear-gradient(45deg, rgba(34,164,116,1) 0%, rgba(41,47,143,1) 100%);
+}
+
+.wrapper{
+    background-color:transparent;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -60%);
+    
+}
+
+.container{
+    width:70vmin;
+    height:70vmin;
+    display:flex;
+    flex-wrap:wrap;
+    gap:2vmin;
+}
+.button-option{
+    width:22vmin;
+    height:22vmin;
+    border:none;
+    border-radius:10px;
+    box-shadow:0 0 12px rgba(0,0,0,0.6)
+}
+
+#restart{
+    position:absolute;
+    font-size:1.3em;
+    padding:0.8em;
+    border:none;
+    outline:none;
+    border-radius:19px;
+    margin-top:80px;
+    left:43%;
+    background-color:#FCAEAE;
+    box-shadow:0 0 10px rgba(0,0,0,0.8);
+    color:black; 
+}
+#restart:hover{
+    cursor: pointer;
+    color:white;
+}
+
+.popup{
+background: linear-gradient(to right, #4A569D, #DC2424); 
+height:100%;
+width:100%;
+position:relative;
+display:flex;
+gap:2em;
+flex-direction: column;
+
+
+
+}
+.popup.hide{
+    display:none;
+}
+
+
+#message{
+    position:absolute;
+    left:60%;
+    bottom:50%;
+    transform:translate(-50%, -50%);
+    font-size:3em;
+}
+
+#new-game{
+    position:absolute;
+    font-size:3em;
+    bottom:20%;
+    left:58%;
+    transform:translate(-50%, -50%);
+    outline:0;
+    border:none;
+    padding:8px;
+    transition: all 0.3s;
+    color:#fff;
+}
+#new-game:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+#new-game:active {
+    color: #64CCC5;
+}
+
+#new-game:active:after {
+    background: transparent;
+}
+
+#new-game:hover:before {
+    opacity: 1;
+}
+
+#new-game:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+
